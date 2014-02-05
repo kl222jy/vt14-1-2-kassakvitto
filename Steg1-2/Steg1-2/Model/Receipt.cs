@@ -32,6 +32,7 @@ namespace Steg1_2.Model
         }
         public double Total { get; private set; }
 
+        //Utför samtliga beräkningar
         public void Calculate(double subtotal)
         {
             //Avgör rabattsatsen
@@ -51,7 +52,10 @@ namespace Steg1_2.Model
             {
                 DiscountRate = 0.15;
             }
+            //Beräkna avdrag för rabatt
             MoneyOff = _subtotal * DiscountRate;
+
+            //Ta bort avdraget från summan
             Total = Subtotal - MoneyOff;
         }
 
